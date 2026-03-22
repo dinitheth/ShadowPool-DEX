@@ -31,3 +31,4 @@ broadcast/
 # Env & Misc
 .env
 .env.*
+vite.config.ts.timestamp-*.mjs

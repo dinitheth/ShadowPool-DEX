@@ -3,13 +3,17 @@ import { Lock, ArrowRight, Shield, CheckCircle } from "lucide-react";
 
 interface EncryptionAnimationProps {
   isComplete: boolean;
+  price: string;
+  size: string;
+  side: "long" | "short";
 }
 
 /**
  * Full-overlay animation showing the FHE encryption process:
  * plaintext data → ciphertext → on-chain submission
  */
-const EncryptionAnimation = ({ isComplete }: EncryptionAnimationProps) => {
+const EncryptionAnimation = ({ isComplete, price, size, side }: EncryptionAnimationProps) => {
+  const colorClass = side === "long" ? "text-buy" : "text-sell";
   const cipherChars = "█▓▒░╔╗╚╝║═╬╦╩╠╣▄▀■□●○◆◇▲△";
   const generateCipher = (len: number) =>
     Array.from({ length: len }, () => cipherChars[Math.floor(Math.random() * cipherChars.length)]).join("");
@@ -45,9 +49,9 @@ const EncryptionAnimation = ({ isComplete }: EncryptionAnimationProps) => {
             >
               <p className="text-[7px] text-muted-foreground mb-0.5">PLAINTEXT</p>
               <div className="font-mono text-[8px] text-foreground space-y-0.5">
-                <div>price: <span className="text-buy">2347.50</span></div>
-                <div>size:  <span className="text-buy">5.2400</span></div>
-                <div>side:  <span className="text-buy">LONG</span></div>
+                <div>price: <span className={colorClass}>{price || "0.00"}</span></div>
+                <div>size:  <span className={colorClass}>{size || "0.0000"}</span></div>
+                <div>side:  <span className={colorClass}>{side.toUpperCase()}</span></div>
               </div>
             </motion.div>
 

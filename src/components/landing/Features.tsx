@@ -8,24 +8,14 @@ const features = [
     description:
       "Open and manage trading positions with fully encrypted size, entry price, and direction. No one — not even validators — can see your exposure.",
   },
-  {
-    icon: Gavel,
-    title: "Sealed-Bid Auctions",
-    description:
-      "Submit encrypted bids that are matched on ciphertext. Prevents bid sniping, last-look manipulation, and information asymmetry in OTC markets.",
-  },
+
   {
     icon: Shield,
     title: "MEV-Protected Execution",
     description:
       "Encrypting all order data makes MEV extraction mathematically impossible. Execute large block trades without sandwich attacks or front-running.",
   },
-  {
-    icon: Building2,
-    title: "Institutional Architecture",
-    description:
-      "Compliance-ready infrastructure for funds, treasuries, and market makers. Permit-gated disclosure lets you prove trade execution without revealing strategy.",
-  },
+
   {
     icon: Cpu,
     title: "FHE-Powered Matching Engine",
@@ -38,18 +28,8 @@ const features = [
     description:
       "Cryptographic permits allow authorized parties to verify specific trade details. Full audit trail without exposing your trading history or strategies.",
   },
-  {
-    icon: Vault,
-    title: "Treasury Management",
-    description:
-      "Execute large treasury rebalances without market impact. Encrypted orders prevent information leakage during multi-million dollar position adjustments.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Confidential Lending",
-    description:
-      "Post encrypted collateral and borrow without revealing portfolio composition. Liquidation thresholds computed on encrypted balances via FHE.",
-  },
+
+
 ];
 
 const Features = () => {
@@ -70,12 +50,12 @@ const Features = () => {
             Institutional-Grade Confidential DeFi
           </h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Private positions, sealed-bid auctions, MEV-protected execution.
-            Built for trading, lending, and treasury management — encrypted end-to-end.
+            Private positions and MEV-protected execution.
+            Built for secure trading — encrypted end-to-end.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-3 max-w-4xl mx-auto">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}

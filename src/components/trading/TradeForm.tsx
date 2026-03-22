@@ -146,7 +146,12 @@ const TradeForm = ({ activePair }: TradeFormProps) => {
       {/* Encryption Animation Overlay */}
       <AnimatePresence>
         {showEncryptionAnim && (
-          <EncryptionAnimation isComplete={!isEncrypting} />
+          <EncryptionAnimation
+            isComplete={!isEncrypting}
+            price={price}
+            size={amount}
+            side={side}
+          />
         )}
       </AnimatePresence>
 
