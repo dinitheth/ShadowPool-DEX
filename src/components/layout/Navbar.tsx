@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Platform", href: "/#features" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Security", href: "/#security" },
-  { label: "Docs", href: "https://cofhe-docs.fhenix.zone", external: true },
 ];
 
 const Navbar = () => {

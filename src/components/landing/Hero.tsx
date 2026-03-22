@@ -170,7 +170,7 @@ const Hero = () => {
           transition={{ delay: 0.35, duration: 0.4 }}
           className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          The first fully encrypted OTC dark pool on EVM. Orders, amounts, and
+          The first fully encrypted Perpetual Futures dark pool on EVM. Orders, amounts, and
           strategies stay encrypted during matching — powered by Fully
           Homomorphic Encryption.
         </motion.p>

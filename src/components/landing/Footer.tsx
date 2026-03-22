@@ -11,20 +11,7 @@ const Footer = () => {
               Shadow<span className="text-primary">Pool</span>
             </span>
           </div>
-          <div className="flex items-center gap-5 text-[11px] text-muted-foreground">
-            <a href="https://github.com/FhenixProtocol" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              GitHub
-            </a>
-            <a href="https://cofhe-docs.fhenix.zone" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              Docs
-            </a>
-            <a href="https://discord.gg/fhenix" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              Discord
-            </a>
-            <a href="https://t.me/+rA9gI3AsW8c3YzIx" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              Telegram
-            </a>
-          </div>
+
           <p className="text-[11px] text-muted-foreground">
             Built with Fhenix FHE
           </p>
