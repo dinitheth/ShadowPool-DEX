@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 14% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 13% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 13% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 185 72% 48%;
+    --primary-foreground: 220 14% 4%;
+
+    --secondary: 220 12% 11%;
+    --secondary-foreground: 0 0% 80%;
+
+    --muted: 220 12% 11%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 265 60% 58%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 12% 12%;
+    --input: 220 12% 12%;
+    --ring: 185 72% 48%;
+
+    --radius: 0.75rem;
+
+    /* Trading tokens */
+    --buy: 152 60% 48%;
+    --sell: 0 72% 51%;
+    --warning: 38 92% 50%;
+    --encrypted: 265 60% 58%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(185 72% 48%), hsl(195 72% 52%));
+    --gradient-accent: linear-gradient(135deg, hsl(265 60% 58%), hsl(285 60% 52%));
+
+    --shadow-glow: 0 0 40px -8px hsl(185 72% 48% / 0.12);
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.3), 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    --sidebar-background: 220 13% 7%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 185 72% 48%;
+    --sidebar-primary-foreground: 220 14% 4%;
+    --sidebar-accent: 220 12% 11%;
+    --sidebar-accent-foreground: 0 0% 80%;
+    --sidebar-border: 220 12% 12%;
+    --sidebar-ring: 185 72% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-buy { color: hsl(var(--buy)); }
+  .text-sell { color: hsl(var(--sell)); }
+  .text-encrypted { color: hsl(var(--encrypted)); }
+  .text-warning-custom { color: hsl(var(--warning)); }
+
+  .bg-buy { background-color: hsl(var(--buy)); }
+  .bg-sell { background-color: hsl(var(--sell)); }
+  .bg-buy\/10 { background-color: hsl(var(--buy) / 0.1); }
+  .bg-sell\/10 { background-color: hsl(var(--sell) / 0.1); }
+  .bg-buy\/15 { background-color: hsl(var(--buy) / 0.15); }
+  .bg-sell\/15 { background-color: hsl(var(--sell) / 0.15); }
+  .bg-encrypted\/10 { background-color: hsl(var(--encrypted) / 0.1); }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .glass-panel {
+    background: hsl(var(--card) / 0.85);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  }
+
+  .encrypted-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+    background: hsl(var(--encrypted) / 0.12);
+    color: hsl(var(--encrypted));
+    border: 1px solid hsl(var(--encrypted) / 0.2);
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--buy));
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 3px hsl(var(--buy) / 0.4); }
+    50% { box-shadow: 0 0 8px hsl(var(--buy) / 0.7); }
+  }
+
+  .glow-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+  }
+}
